@@ -58,9 +58,9 @@
 	    width: calc(100% - 250px);
 	    padding: 40px 10px;
 	    transition: 0.5s; }
-	.minimized { margin-left: -210px; transition: 0.5s; }    
-    .full { width: calc(100% - 40px); transition: 0.5s; }    
-    .admin-head.full { left: 40px; transition: 0.5s; }	    
+	.minimized { margin-left: -215px; transition: 0.5s; }    
+    .full { width: calc(100% - 35px); transition: 0.5s; }    
+    .admin-head.full { left: 35px; transition: 0.5s; }	    
 </style>
 
 <div class="admin-head">
@@ -73,15 +73,19 @@
 <div class="admin-dash">
 	<div class="title">Admin Dashboard</div>
 	<ul>
-		<a href="#"><li class="active">Billboards</li></a>
-		<a href="#"><li>Reservations</li></a>
+		<a href="#"><li id="billboards">Billboards</li></a>
+		<a href="#"><li id="reservations">Reservations</li></a>
 	</ul>
 	<div class="minimizer"><i class="fa fa-minus-square"></i></div>	
 </div>
 
 <div class="main-content">
 
+
+<script type="text/javascript"> var tabSelect = <?php echo json_encode($tabSelect) ?>;</script>
 <script type="text/javascript">
+	$('#'+tabSelect).addClass('active');
+
 	var isFull = false;
 	$('.minimizer').click(function() {
 		if(!isFull) {
