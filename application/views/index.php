@@ -128,9 +128,15 @@
 
 
 		$(document).ready(function(){
-		   $(".cusSelect").change(function(){
-		     $("img.billboards").attr("src",$(this).val());
-		   });
+			$(".cusSelect").change(function(){ 
+				var bill = this;
+				 
+				$("img.billboards").fadeOut("fast", function(){
+					$("img.billboards").attr("src",$(bill).val()); 
+					$("img.billboards").fadeIn("slow"); 
+				});
+				
+			});
 		});
 
 	</script>
