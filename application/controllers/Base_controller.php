@@ -5,7 +5,7 @@ class Base_controller extends CI_Controller {
 
 	public function index()
 	{	
-		echo "home";
+		$this->load->view('index');
 	}
 
 }
